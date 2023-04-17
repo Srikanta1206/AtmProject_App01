@@ -9,8 +9,7 @@ import com.ni.cj.src.Withdraw;
 
 public class UserAccess extends RuntimeException {
 	
-	UserAccess(){
-		
+	UserAccess(){	
 	}
 	UserAccess(String s){
 		super(s);
@@ -67,6 +66,7 @@ public class UserAccess extends RuntimeException {
 				System.out.println("Invalid Pin Length");
 				c++;
 			}
+			//Account blocked if three time incorrect pin in a Transation
 			if(c==3) {
 				System.err.println("Transation blocked for 48 hours");
 				break;
