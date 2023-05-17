@@ -30,7 +30,7 @@ public class StudentResultServlet extends HttpServlet {
 		int roll=Integer.parseInt(request.getParameter("roll"));
 		ResultDAO rdao=new ResultDAO();
 		ResultBean rb=rdao.getResult(roll);
-		request.setAttribute("result", rb);
+		request.setAttribute("data", rb);
 		RequestDispatcher rd=request.getRequestDispatcher("/Result.jsp");
 		rd.forward(request, response);
 		

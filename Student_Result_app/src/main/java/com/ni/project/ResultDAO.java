@@ -19,13 +19,13 @@ public class ResultDAO {
 			pstm.setInt(1, rollNo);
 			ResultSet rs=pstm.executeQuery();
 			rb=new ResultBean();
-			while(rs.next()) {
+			rs.next();
 				rb.setRollNo(rs.getInt(1));
 				rb.setName(rs.getString(2));
 				rb.setC(rs.getInt(3));
 				rb.setCpp(rs.getInt(4));
 				rb.setJava(rs.getInt(5));
-			}
+				return rb;
 		}catch(ClassNotFoundException|SQLException e) {
 			e.printStackTrace();
 		}
